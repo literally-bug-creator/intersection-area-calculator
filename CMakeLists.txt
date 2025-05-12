@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 3.14)
-project(quadratic-equation-solver)
+project(intersection-area-calculator)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 include(FetchContent)
 
@@ -10,15 +11,9 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(Catch2)
 
-add_library(quadratic_solver
+add_library(intersection-area-calculator
+    src/main.cpp
+    src/error.cpp
 )
 
-target_include_directories(quadratic_solver PUBLIC include)
-
-add_executable(tests
-)
-
-target_compile_options(tests PRIVATE --coverage -O0 -g)
-target_link_options(tests PRIVATE --coverage)
-
-target_link_libraries(tests PRIVATE quadratic_solver Catch2::Catch2WithMain)
+target_include_directories(intersection-area-calculator PUBLIC include)
