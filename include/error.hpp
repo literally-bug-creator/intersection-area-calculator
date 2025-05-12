@@ -5,6 +5,7 @@
 enum ErrorCode {
     OK,
     INPUT_ERROR,
+    RUNTIME_ERROR,
     CALCULATION_ERROR
 };
 
